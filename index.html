@@ -89,8 +89,8 @@ connection.connectSocket(function(socket) {
         console.log('start-broadcasting', typeOfStreams);
         // host i.e. sender should always use this!
         connection.sdpConstraints.mandatory = {
-            OfferToReceiveVideo: false,
-            OfferToReceiveAudio: false
+            OfferToReceiveVideo: true,
+            OfferToReceiveAudio: true
         };
         connection.session = typeOfStreams;
         // "open" method here will capture media-stream
@@ -126,8 +126,8 @@ connection.onstream = function(event) {
         connection.dontCaptureUserMedia = true;
         connection.attachStreams = [event.stream];
         connection.sdpConstraints.mandatory = {
-            OfferToReceiveAudio: false,
-            OfferToReceiveVideo: false
+            OfferToReceiveAudio: true,
+            OfferToReceiveVideo: true
         };
         var socket = connection.getSocket();
         socket.emit('can-relay-broadcast');
