@@ -7,12 +7,12 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 </head>
 <body>
-    <h1>
+<!--     <h1>
     WebRTC Scalable Broadcast using RTCMultiConnection
     <p>
       Use peer-to-peer protocol to broadcast your video over 20+ users.
     </p>
-  </h1>
+  </h1> -->
   
   <section class="make-center">
       <div class="make-center">
@@ -50,7 +50,7 @@ connection.socketMessageEvent = 'scalable-media-broadcast-demo';
 // user need to connect server, so that others can reach him.
 connection.connectSocket(function(socket) {
     socket.on('logs', function(log) {
-        document.querySelector('h1').innerHTML = log.replace(/</g, '----').replace(/>/g, '___').replace(/----/g, '(<span style="color:red;">').replace(/___/g, '</span>)');
+        //document.querySelector('h1').innerHTML = log.replace(/</g, '----').replace(/>/g, '___').replace(/----/g, '(<span style="color:red;">').replace(/___/g, '</span>)');
     });
     // this event is emitted when a broadcast is already created.
     socket.on('join-broadcaster', function(hintsToJoinBroadcast) {
@@ -312,30 +312,11 @@ connection.onNumberOfBroadcastViewersUpdated = function(event) {
 };
 </script>
 
-  <section>
-    <h2>How this works?</h2>
-    <p>
-      This module simply initializes socket.io and configures it in a way that single audio/video/screen stream can be shared/relayed over unlimited users without any <a href="https://www.webrtc-experiment.com/docs/RTP-usage.html">bandwidth/CPU usage issues</a>. Everything happens peer-to-peer!
-    </p>
-    <p>
-      Check <a href="https://github.com/muaz-khan/WebRTC-Experiment/issues/2">this thread</a> or <a href="https://github.com/muaz-khan/WebRTC-Scalable-Broadcast">this github repository</a>.
-    </p>
-  </section>
-
-  <section>
-    <h2>iOS or Android</h2>
-    <p>
-      This demo <a href="http://webrtcweb.com/cordova-apps/scalable-broadcast/" target="_blank">has built-in (open-sourced)</a> cordova apps both for <b>iOS</b> and <b>Android</b>.
-    </p>
-    <p>
-      Google AppStore Link: <a href="https://play.google.com/store/apps/details?id=com.webrtc.scalablebroadcast" target="_blank">https://play.google.com/store/apps/details?id=com.webrtc.scalablebroadcast</a>
-    </p>
-  </section>
-
   <footer>
     <small id="send-message"></small>
   </footer>
 
   <script src="https://cdn.webrtc-experiment.com/common.js"></script>
+   
 </body>
 </html>
